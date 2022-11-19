@@ -10,16 +10,22 @@ function App() {
     {id: 2, text: "Learn GIT"},
     {id: 3, text: "Learn Cypress"},
   ]);
+
   const addTask = (newTask) => {
     setTasks([...tasks, newTask])
     console.log(tasks)
   }
+
+  const removeTask = (task) => {
+    setTasks(tasks.filter(t => t.id !== task.id))
+  }
+
   return (
     <div className="App">
       <div className="App__card">
         <h1 className="App__title">To Do:</h1>
-        <Input addTask={addTask}/>
-        <TasksList tasks={tasks}/>
+        <Input add={addTask}/>
+        <TasksList remove={removeTask} tasks={tasks}/>
       </div>
     </div>
   );

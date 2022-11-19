@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import add_btn from "../img/add.svg";
 
-const Input = ({addTask}) => {
+const Input = ({add}) => {
   const [task, setTask] = useState({text: ''})
 
   const createTask = () => {
     const newTask = {
       ...task, id: Date.now()
     }
-    addTask(newTask)
+    add(newTask)
     setTask({text: ''})
   }
 
