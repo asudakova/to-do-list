@@ -12,11 +12,18 @@ const Input = ({add}) => {
     setTask({text: ''})
   }
 
+  const isEnterPressed = (event) => {
+    if (event.code === 'Enter') {
+      createTask();
+    }
+  }
+
   return (
     <div className="App__input">
       <input
         value={task.text}
         onChange={e => setTask({text: e.target.value})}
+        onKeyUp={isEnterPressed}
         placeholder="Write here something..."
         type="text"/>
       <img onClick={createTask} src={add_btn} alt="Add btn"/>

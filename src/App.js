@@ -13,7 +13,6 @@ function App() {
 
   const addTask = (newTask) => {
     setTasks([...tasks, newTask])
-    console.log(tasks)
   }
 
   const removeTask = (task) => {
